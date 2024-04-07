@@ -4,7 +4,7 @@ FROM ubuntu:latest
 # Install Nginx
 RUN apt-get update && \
     apt-get install -y nginx && \
-    rm -rf /var/www/html/
+    rm -rf /var/www/html/index.html
 
 # Copy index.html to the default site area
 COPY index.html /var/www/html/index.html
