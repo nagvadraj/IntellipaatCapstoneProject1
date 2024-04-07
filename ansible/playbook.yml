@@ -3,7 +3,7 @@
   hosts: all
   become: true
   pre_tasks:
-    - name: Update apt cache
+    - name: Update apt cache before tasks
       apt:
         update_cache: yes
 
@@ -17,6 +17,10 @@
         repo: deb https://pkg.jenkins.io/debian-stable binary/
         state: present
 
+    - name: Update apt cache after taskssssss
+      apt:
+        update_cache: yes
+
     - name: Install JDK 11
       apt:
         name: openjdk-11-jdk
@@ -26,3 +30,8 @@
     - git
     - docker
     - jenkins
+
+  post_tasks:
+    - name: Update apt cache after tasks
+      apt:
+        update_cache: yes
