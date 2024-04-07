@@ -1,0 +1,8 @@
+---
+- name: Install necessary software
+  hosts: all
+  become: true
+  roles:
+    - git
+    - docker
+    - jenkins
