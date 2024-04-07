@@ -1,7 +1,23 @@
 ---
-- name: Install necessary software
+- name: Install JDK 11 and Jenkins
   hosts: all
   become: true
+  pre_tasks:
+    - name: Add Jenkins repository key
+      apt_key:
+        url: https://pkg.jenkins.io/debian/jenkins.io.key
+        state: present
+
+    - name: Add Jenkins repository
+      apt_repository:
+        repo: deb https://pkg.jenkins.io/debian-stable binary/
+        state: present
+
+    - name: Install JDK 11
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
   roles:
     - git
     - docker
