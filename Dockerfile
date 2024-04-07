@@ -2,8 +2,8 @@
 FROM ubuntu:latest
 
 # Install Apache2
-RUN apt update && \
-    apt install -y apache2 && 
+RUN sudo apt update && \
+    sudo apt install -y apache2 && 
 
 # Copy index.html to the default site area
 COPY index.html /var/www/html/index.html
