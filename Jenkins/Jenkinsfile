@@ -20,10 +20,10 @@ pipeline {
             when {
                 branch 'main'
             }
-            steps {{
+            steps {
                 // Deploy to prod
                 sh 'docker push your-image-name'
             }
         }
     }
-}}
+}
