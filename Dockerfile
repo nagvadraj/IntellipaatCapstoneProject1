@@ -3,8 +3,7 @@ FROM ubuntu:latest
 
 # Install Apache2
 RUN apt-get update && \
-    apt-get install -y apache2 && \
-    rm -rf /var/www/html/index.html
+    apt-get install -y apache2 && 
 
 # Copy index.html to the default site area
 COPY index.html /var/www/html/index.html
