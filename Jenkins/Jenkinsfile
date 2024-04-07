@@ -9,6 +9,7 @@ pipeline {
                 // Build Docker image
                 script {
                     docker.build('myweb-page')
+                    docker.save('${env.WORKSPACE}/${myweb-page}.tar')
                 }
             }
         }
