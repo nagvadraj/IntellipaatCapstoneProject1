@@ -19,4 +19,10 @@
 
     - name: Install JDK 11
       apt:
-        name
+        name: openjdk-11-jdk
+        state: present
+
+  roles:
+    - git
+    - docker
+    - jenkins
