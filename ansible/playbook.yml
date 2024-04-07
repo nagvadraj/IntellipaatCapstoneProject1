@@ -1,6 +1,6 @@
 ---
 - name: Provision Jenkins, Git, and Docker
-  hosts: your_target_hosts
+  hosts: all
   become: true
   roles:
     - jenkins
