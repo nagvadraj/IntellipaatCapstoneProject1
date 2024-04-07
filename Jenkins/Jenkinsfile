@@ -7,7 +7,9 @@ pipeline {
                 // Checkout code from git and build
                 git branch: 'main', url: 'https://github.com/nagvadraj/IntellipaatCapstoneProject1.git'
                 // Build Docker image
-                sh 'docker build -t my-webapp .'
+                script {
+                    docker.build('myweb-page')
+                }
             }
         }
     }
