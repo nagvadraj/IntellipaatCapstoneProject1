@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update
+RUN sudo apt-get update -y
 RUN DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y apache2
 RUN DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y apache2-utils
 RUN apt-get clean
