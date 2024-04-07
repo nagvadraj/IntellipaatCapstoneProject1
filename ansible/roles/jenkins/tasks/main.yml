@@ -1,4 +1,9 @@
 ---
+- name: Install JDK 11
+  apt:
+    name: openjdk-11-jdk
+    state: present
+
 - name: Add Jenkins GPG key
   apt_key:
     url: https://pkg.jenkins.io/debian/jenkins.io.key
@@ -19,8 +24,3 @@
     name: jenkins
     state: started
     enabled: yes
-
-- name: Install JDK 11
-  apt:
-    name: openjdk-11-jdk
-    state: present
