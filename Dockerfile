@@ -1,15 +1,8 @@
-# Use Ubuntu as the base image
-FROM ubuntu:latest
-
-# Install Apache2
-RUN sudo apt update && \
-    sudo apt install -y apache2 && 
-
-# Copy index.html to the default site area
-COPY index.html /var/www/html/index.html
-
-# Expose port 80
+FROM ubuntu
+RUN apt-get update
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y apache2
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y apache2-utils
+RUN apt-get clean
+COPY ./index.html /var/www/html/
 EXPOSE 80
-
-# Start Apache2 in the foreground when container starts
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["apache2ctl", "-D","FOREGROUND"]
