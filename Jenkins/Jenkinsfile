@@ -10,20 +10,5 @@ pipeline {
                 sh 'docker build -t my-webapp .'
             }
         }
-        stage('Test') {
-            steps {
-                // Run tests here
-                // Example: sh 'docker run my-webapp test-command'
-            }
-        }
-        stage('Deploy to Production') {
-            when {
-                branch 'main'
-            }
-            steps {
-                // Deploy to prod
-                sh 'docker push your-image-name'
-            }
-        }
     }
 }
