@@ -1,4 +1,9 @@
 ---
+- name: Install OpenJDK 11
+  apt:
+    name: openjdk-11-jdk
+    state: present
+
 - name: Install Jenkins
   yum:
     name: jenkins
