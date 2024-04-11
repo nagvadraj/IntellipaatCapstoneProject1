@@ -1,6 +1,5 @@
 # Use Ubuntu as the base image
-FROM ubuntu:latest
-
+FROM alpine:latest
 # Install Apache HTTP Server
 RUN apt update && \
     apt install -y apache2 && \
