@@ -2,9 +2,9 @@
 FROM ubuntu:latest
 
 # Install Apache HTTP Server
-RUN apt-get update && \
-    apt-get install -y apache2 && \
-    apt-get clean && \
+RUN apt update && \
+    apt install -y apache2 && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the index.html file to the Apache document root directory
