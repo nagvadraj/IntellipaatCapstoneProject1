@@ -23,7 +23,7 @@ pipeline {
             steps {
                 // Push Docker image to a registry
                 script {
-                    docker.withRegistry('https://hub.docker.com/', 'dockercreds') {
+                    docker.withRegistry('https://hub.docker.com/', 'creds') {
                         docker.image(env.DOCKER_IMAGE).push()
                     }
                 }
